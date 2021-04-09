@@ -1,0 +1,5 @@
+<h3>All products:</h3>
+<h4>
+  <% @products.each do |t| %>
+    <li><%= link_to t.title, product_path(t) %></li>
+  <% end %></h4>
