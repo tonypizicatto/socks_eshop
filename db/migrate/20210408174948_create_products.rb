@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :size
       t.binary :image
       t.string :manufacturer
-      t.integer :price
+      t.decimal :price, precision: 8, scale: 2
       t.timestamps
     end
   end
