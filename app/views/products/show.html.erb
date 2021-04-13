@@ -1,0 +1,12 @@
+<h4>Product name: <strong><%= @product.title %></strong></h4>
+<h4>Description: <strong><%= @product.description %></strong></h4>
+<h4>Category: <strong><%= @product.category %></strong></h4>
+<h4>Gender: <strong><%= @product.gender %></strong></h4>
+<h4>Size: <strong><%= @product.size %></strong></h4>
+<% if @product.image.attached? %>
+  <%= image_tag @product.image.representation(resize: "100x100") %>
+<% else %>
+  <strong>No image</strong>
+<% end %>
+<h4>Manufacturer: <strong><%= @product.manufacturer %></strong></h4>
+<h4>Price: <strong><%= @product.price %></strong></h4>

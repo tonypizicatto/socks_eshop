@@ -1,6 +1,11 @@
 <h3>All products:</h3>
 <h4>
   <% @products.each do |t| %>
-    <li><%= link_to t.title, product_path(t) %></li>
+    <li><% if t.image.attached? %>
+        <%= image_tag t.image.representation(resize: "100x100") %>
+      <% else %>
+        <strong><%= link_to "No image", product_path(t) %></strong>
+        <% end %>
+      <%= link_to t.title, product_path(t) %></li>
     <li><%= t.price %></li>
   <% end %></h4>
